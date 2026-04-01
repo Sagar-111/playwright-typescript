@@ -6,7 +6,7 @@ export default defineConfig({
   retries: 1,
   reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
-    baseURL: 'https://the-internet.herokuapp.com',
+    baseURL: 'https://www.saucedemo.com',
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
