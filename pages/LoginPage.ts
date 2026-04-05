@@ -1,6 +1,7 @@
 import{Locator, Page} from '@playwright/test';
+import { BasePage } from './BasePage';
 
-export class LoginPage{
+export class LoginPage extends BasePage{
 
     readonly page: Page;
     readonly usernameInput: Locator;
@@ -9,15 +10,12 @@ export class LoginPage{
     readonly loginErrorMessage: Locator;
 
     constructor(page:Page){
+        super(page);
         this.page=page;
         this.usernameInput = page.locator("#user-name");
         this.passwordInput = page.locator("#password");
         this.loginButton = page.locator('input[type="submit"]');
         this.loginErrorMessage = page.locator('.error-button');
-    }
-
-    async navigate(){
-        await this.page.goto('');
     }
 
     async login(username:string, password:string){

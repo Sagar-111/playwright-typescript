@@ -12,7 +12,7 @@ test.describe('Login test Using Data from json', () => {
     for (const user of users) {
         test(`login test for ${user.username}`, async ({ page }) => {
             const loginPage = new LoginPage(page);
-            await loginPage.navigate();
+            await loginPage.navigate('/');
             await loginPage.login(user.username, user.password);
 
             if (user.expectSuccess) {
